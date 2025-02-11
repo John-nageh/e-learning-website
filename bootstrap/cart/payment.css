@@ -1,0 +1,403 @@
+
+body {
+    padding: 35px;
+    padding-right: 0px;
+    padding-left: 280px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.payment {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-div {
+    margin-top: 70px;
+    justify-content: space-between;
+    margin-right: 50px;
+}
+
+.payment-div h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.payment-div p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: gray;
+    margin-top: 8px;
+}
+
+.payment-div label {
+    display: block;
+    margin-bottom: 4px;
+    margin-top: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.payment-div select {
+    display: block;
+    width: 250px;
+    padding: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+
+.card-option {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-div .card-option img {
+    width: 50px;
+    height: 40px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.inputs input[type="text"]::placeholder {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.payment-method .card-option,
+.inputs {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.checkbox label {
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+}
+
+.checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 20px;
+    height: 18px;
+
+}
+
+/* Container styling */
+.summary-container {
+    background-color: #f9f9f9;
+    /* Light background */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 50%;
+    /* Adjust to fit */
+    margin: 20px 20px;
+    padding: 100px;
+}
+
+/* Headings */
+.summary-container h3 {
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Price details */
+.summary-detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-bottom: 0.5px solid gray;
+}
+
+.summary-detail.total {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #000;
+}
+
+/* Terms text */
+.terms {
+    font-size: 12px;
+    color: #666;
+    margin: 15px 0;
+}
+
+.terms a {
+    color: #C3413B;
+    /* Purple link */
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+/* Checkout button */
+.checkout-btn {
+    background-color: #C3413B;
+    /* Purple button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.checkout-btn span {
+    margin-right: 5px;
+}
+
+.checkout-btn:hover {
+    background-color: #C3413B;
+    /* Darker purple */
+}
+
+/* Money-back text */
+.money-back {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Success box styling */
+.success-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #dff0d8;
+    /* Dark green text */
+    border: 1px solid #d6e9c6;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+}
+
+.success-box button {
+    background-color: #C3413B;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    width: 50%;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.success-box button:hover {
+    background-color: #F5827C;
+}
+
+/* Hidden class to toggle visibility */
+.hidden {
+    display: none;
+}
+
+@media (max-width: 430px) {
+    body {
+        padding: 4%;
+    }
+
+    .summary-container {
+        margin: 0;
+        /* Remove all margins */
+        padding: 10px 4%;
+        /* Ensure proper padding inside */
+        position: fixed;
+        /* Fixes the checkout section at the bottom */
+        bottom: 0;
+        /* Positions it at the bottom of the screen */
+        left: 0;
+        right: 0;
+        width: 100%;
+        /* Full width */
+        background-color: white;
+        /* Solid background for the checkout box */
+        z-index: 1000;
+        text-align: center;
+        /* Ensures the checkout box stays on top */
+    }
+
+    .summary-container h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .summary-detail {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .summary-detail.total {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .terms {
+        font-size: 10px;
+        margin: 10px 0;
+    }
+
+    .checkout-btn {
+        font-size: 14px;
+        padding: 10px;
+
+    }
+
+    .money-back {
+        font-size: 10px;
+        margin-top: 5px;
+    }
+
+    .payment-div {
+        margin-bottom: 70%;
+        margin-right: 0px;
+        /* Prevents overlap by adding more space below the last cart item */
+        /* Adjust this margin if the checkout section still overlaps */
+    }
+
+    .inputs input[type="text"]::placeholder {
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+/* Responsive styles for screens with max-width: 770px */
+@media (max-width: 770px) {
+    body {
+        padding: 20px 0px 20px 20px;
+        padding-top: 5%;
+    }
+
+    .payment-div {
+        margin-top: 60px;
+        margin-right: 4%;
+        width: 100%;
+    }
+
+    .payment-div h1 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .payment-div p {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .payment-div label {
+        font-size: 14px;
+    }
+
+    .payment-div select {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .card-option {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .payment-div .card-option img {
+        width: 40px;
+        height: 30px;
+        margin: 5px;
+    }
+
+    .inputs input[type="text"]::placeholder {
+        font-size: 14px;
+    }
+
+    .payment-method .card-option,
+    .inputs {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .checkbox {
+
+
+        align-items: flex-start;
+        font-size: 12px;
+    }
+
+    .checkbox label {
+        font-size: 12px;
+    }
+
+    .checkbox input[type="checkbox"] {
+        width: 18px;
+        height: 16px;
+    }
+
+    /* Summary container adjustments */
+    .summary-container {
+        width: 100%;
+        padding-top: 30px;
+        margin: 10px 0;
+    }
+
+    .summary-container h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .summary-detail {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .summary-detail.total {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .terms {
+        font-size: 10px;
+        margin: 10px 0;
+    }
+
+    .checkout-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .money-back {
+        font-size: 10px;
+        margin-top: 5px;
+    }
+
+    /* Success box adjustments */
+    .success-box {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .success-box button {
+        width: 80%;
+        padding: 8px;
+        font-size: 14px;
+    }
+}

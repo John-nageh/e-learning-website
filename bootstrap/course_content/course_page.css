@@ -1,0 +1,381 @@
+body {
+    padding-top: 75px;
+    padding-left: 3px;
+    font-family: 'Poppins', sans-serif;
+    gap: 0px;
+}
+
+/* Custom styles for the header */
+
+.navbar {
+    background-color: #fff !important;
+    /* Remove the background color */
+    position: fixed;
+    /* Makes the navbar stay at the top */
+    top: 0;
+    /* Aligns the navbar to the top */
+    left: 0;
+    /* Aligns to the left */
+    width: 100%;
+    /* Ensures it spans the full width of the page */
+    z-index: 1000;
+    /* Ensures it appears above other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional: Add a subtle shadow */
+}
+
+.navbar-brand span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    /* Black color for the brand text */
+}
+
+.navbar-brand.logo:hover {
+    transform: scale(1.1);
+}
+
+.course {
+    display: flex;
+    margin: 0px;
+}
+
+.course-main {
+    align-items: flex-start;
+    /* Align items to the top */
+
+}
+
+.course-video video {
+    max-width: 100%;
+    /* Video will take up at most 90% of the width of its container */
+    max-height: 60%;
+    /* Video will take up at most 60% of the container or viewport height */
+}
+
+
+
+.course-card {
+    background: white;
+    padding-left: 3%;
+}
+
+.course-card h1 {
+    padding-top: 1%;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.course-statics {
+    gap: 50px;
+    margin-top: 20px;
+    border-bottom: 1px solid black;
+}
+
+.course-statics div h2 {
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+.details {
+    margin-top: 10px;
+}
+
+.features {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.features li {
+    background: #e0e0e0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.course-statics div p {
+    color: gray;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.course-desc {
+    display: flex;
+    gap: 100px;
+    margin-top: 10px;
+    font-size: 15px;
+    border-bottom: 1px solid black;
+}
+
+.course-inst {
+    display: flex;
+    gap: 100px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.course-inst h4 a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    margin-top: 90px;
+}
+
+.course-inst h4 a:hover {
+    color: #C3413B;
+}
+
+
+
+.course-content {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 60%;
+    /* width: 100%; */
+    overflow: hidden;
+}
+
+.clickable-item {
+    cursor: pointer;
+    /* Changes cursor to a pointer to indicate interactivity */
+    transition: background-color 0.2s ease-in-out;
+}
+
+.clickable-item:hover {
+    background-color: #f8f9fa;
+    /* Light gray background on hover */
+}
+
+.list-group {
+    border: none;
+    /* Removes the border around the list group */
+}
+
+.list-group-item {
+    border: none;
+    /* Removes borders from each list group item */
+}
+
+@media (max-width: 770px) {
+    .course-video video {
+        max-width: 100%;
+        max-height: 50%;
+        /* Adjust max height for smaller screens */
+    }
+
+    .course-card {
+        padding-left: 1%;
+        /* Increase padding for better spacing on smaller screens */
+    }
+
+    .course-card h1 {
+        font-size: 24px;
+        /* Reduce font size for better fit */
+    }
+
+    .course-statics {
+        gap: 30px;
+        margin-top: 15px;
+        /* Adjust spacing for smaller screens */
+    }
+
+    .course-statics div h2 {
+        font-size: 10px;
+    }
+
+    .course-statics div p {
+        font-size: 10px;
+    }
+
+    .details {
+        margin-top: 5px;
+        /* Reduce spacing for compact view */
+    }
+
+    .features {
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    .features li {
+        margin: 3px 0;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .course-desc {
+        flex-direction: column;
+        gap: 20px;
+        /* Stack items vertically for smaller screens */
+        font-size: 14px;
+    }
+
+    .course-inst {
+        flex-direction: column;
+        gap: 20px;
+        font-size: 14px;
+    }
+
+    .course-inst h4 a {
+        margin-top: 20px;
+        font-size: 14px;
+        /* Reduce margin and font size for better fit */
+    }
+
+    .course-content {
+        margin: 10px;
+        border-radius: 3px;
+        /* Adjust spacing and border radius */
+    }
+
+    .clickable-item {
+        padding: 8px;
+        /* Add padding for smaller items */
+    }
+
+    .clickable-item:hover {
+        background-color: #f0f0f0;
+        /* Slightly lighter background for hover */
+    }
+
+    .list-group {
+        margin: 0;
+        padding: 0;
+    }
+
+    .list-group-item {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .card {
+        width: 100%;
+        /* Ensure full-width card for smaller screens */
+        margin: 0;
+        margin-left: 5px;
+    }
+
+    .card-header h5 {
+        font-size: 18px;
+        /* Adjust title size for smaller screens */
+    }
+
+    .accordion .accordion-button {
+        font-size: 14px;
+        /* Adjust section titles font size */
+    }
+
+    .accordion-body {
+        font-size: 12px;
+        /* Reduce font size in accordion body */
+    }
+
+    .list-group-item {
+        font-size: 12px;
+        /* Reduce list item font size */
+    }
+
+    .list-group-item span {
+        font-size: 10px;
+        /* Adjust the size of the duration text */
+    }
+}
+
+
+
+
+@media (max-width:430px) {
+
+    body {
+        padding-top: 60px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .navbar-brand span {
+        font-size: 1.2rem;
+    }
+
+    .course {
+        flex-direction: column;
+    }
+
+    .course-card h1 {
+        font-size: 22px;
+        /* Adjusted for small screens */
+    }
+
+    .course-statics {
+        gap: 20px;
+        border-bottom: none;
+        /* Removes extra styling on narrow screens */
+    }
+
+    .course-statics div h2 {
+        font-size: 10px;
+    }
+
+    .course-statics div p {
+        font-size: 10px;
+    }
+
+    .features li {
+        margin: 5px 0;
+        padding: 8px;
+        /* Adjusted padding for small screens */
+    }
+
+    .course-desc,
+    .course-inst {
+        flex-direction: column;
+        gap: 20px;
+        /* Stack items vertically with smaller gap */
+        font-size: 12px;
+        /* Smaller font for small screens */
+        border-bottom: none;
+    }
+
+    .course-inst h4 a {
+        font-size: 14px;
+    }
+
+    .course-video video {
+        max-height: 40%;
+        /* Shrink video size for narrow viewports */
+    }
+
+    .card {
+        width: 100%;
+        /* Ensure full-width card for smaller screens */
+        margin: 0;
+        margin-left: 5px;
+    }
+
+    .card-header h5 {
+        font-size: 18px;
+        /* Adjust title size for smaller screens */
+    }
+
+    .accordion .accordion-button {
+        font-size: 14px;
+        /* Adjust section titles font size */
+    }
+
+    .accordion-body {
+        font-size: 12px;
+        /* Reduce font size in accordion body */
+    }
+
+    .list-group-item {
+        font-size: 12px;
+        /* Reduce list item font size */
+    }
+
+    .list-group-item span {
+        font-size: 10px;
+        /* Adjust the size of the duration text */
+    }
+
+}

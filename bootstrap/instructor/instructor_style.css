@@ -1,0 +1,421 @@
+body {
+  padding: 25px;
+  padding-left: 200px;
+  padding-right: 150px;
+}
+
+.ins-data {
+  margin-top: 70px;
+  opacity: 0;
+  /* Initial invisible state */
+  transform: translateY(30px);
+  /* Slightly shifted down */
+  animation: fadeInUp 1s ease-out forwards;
+  /* Animation */
+}
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* To ensure the animation only triggers when it appears in view */
+.ins-data.visible {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.ins-data h2 {
+  color: #C3413B;
+  transition: color 0.3s ease;
+  /* Smooth transition */
+}
+
+.ins-data h2:hover {
+  color: #F5827C;
+}
+
+.img-container {
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.img-container img {
+  width: 160px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  opacity: 0;
+  /* Initially invisible */
+  transform: scale(0.9);
+  /* Start slightly scaled down */
+  animation: fadeIn 1s ease-out forwards;
+  /* Fade in animation */
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  /* Smooth transition */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.img-container img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  /* Slight zoom effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.img-container ul {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  color: gray;
+}
+
+.ins-disc {
+  font-family: 'Poppins', sans-serif;
+}
+
+.ins-disc p {
+  font-size: 16px;
+}
+
+.ins-courses h2 {
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  transition: color 0.3s ease;
+  /* Smooth transition */
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+.courses-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allows the items to wrap to the next row */
+  gap: 30px;
+  /* Space between the cards */
+}
+
+
+/* course card */
+.ins-course-card {
+  flex: 1 1 30%;
+  /* Each card takes 30% of the container width */
+  max-width: 360px;
+  /* Ensure the card doesn't grow beyond its design */
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #F5F2EB;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  opacity: 1;
+  /* Initially hidden */
+}
+
+.ins-course-card:hover {
+  transform: scale(1);
+  /* Slightly enlarges the photo */
+  box-shadow: 0px 8px 15px #ccc;
+  /* Adds a shadow effect */
+}
+
+.ins-course-card.visible {
+  opacity: 1;
+  /* Fully visible */
+  transform: translateY(0);
+  /* Moves to its normal position */
+}
+
+.ins-course-card .img-cover {
+  transition: var(--transition-2);
+}
+
+.ins-course-card:is(:hover, :focus-within) .img-cover {
+  transform: scale(1.1);
+}
+
+.ins-course-card :is(.abs-badge, .badge) {
+  font-family: 'League Spartan', sans-serif;
+  border-radius: 5px;
+}
+
+.ins-course-card .abs-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #DCDCDC;
+  color: #C3413B;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  line-height: 1;
+  padding: 6px 8px;
+  padding-block-end: 3px;
+}
+
+.ins-course-card .abs-badge ion-icon {
+  font-size: 18px;
+  margin-block-end: 5px;
+  --ionicon-stroke-width: 50px;
+}
+
+.ins-course-card .card-content {
+  padding: 15px;
+}
+
+.ins-course-card .badge {
+  max-width: max-content;
+  color: hsl(170, 75%, 41%);
+  line-height: 25px;
+  padding-inline: 10px;
+}
+
+.ins-course-card .card-title:is(:hover, :focus) {
+  color: #C3413B;
+}
+
+.ins-course-card :is(.wrapper, .rating-wrapper, .card-meta-list, .card-meta-item) {
+  display: flex;
+  align-items: center;
+}
+
+.ins-course-card .wrapper {
+  gap: 10px;
+}
+
+.ins-course-card .rating-wrapper {
+  gap: 3px;
+}
+
+.ins-course-card .rating-wrapper ion-icon {
+  color: hsl(42, 94%, 55%);
+}
+
+.ins-course-card .rating-text {
+  color: hsl(0, 0%, 9%);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.ins-course-card .price {
+  color: #C3413B;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-block: 8px 15px;
+}
+
+.ins-course-card .card-meta-list {
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+.ins-course-card .card-meta-item {
+
+  position: relative;
+  gap: 10px;
+}
+
+.ins-course-card .card-meta-item:not(:last-child)::after {
+  content: "|";
+  display: inline-block;
+  color: #fff;
+  padding-inline: 10px;
+}
+
+.ins-course-card .card-meta-item ion-icon {
+  color: hsl(0, 0%, 65%);
+  --ionicon-stroke-width: 50px;
+}
+
+.ins-course-card .card-meta-item .span {
+  color: hsl(0, 0%, 9%);
+  font-size: 1.3rem;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    /* Start off-screen to the right */
+    opacity: 0;
+    /* Initially hidden */
+  }
+
+  to {
+    transform: translateX(0);
+    /* End at its normal position */
+    opacity: 1;
+    /* Fully visible */
+  }
+}
+
+
+@media (max-width: 770px) {
+  body {
+    padding: 0px 4% 0px 4%;
+  }
+
+  .ins-data h2 {
+    font-size: 22px;
+    margin-top: 8px;
+  }
+
+  .ins-disc h4 {
+    font-size: 20px;
+  }
+
+  .ins-disc p {
+    font-size: 14px;
+  }
+
+  .ins-course-card {
+    flex: 1 1 47%; /* Adjust cards to take up almost half the container width */
+    max-width: 47%; /* Ensure the width stays consistent for two columns */
+    margin-bottom: 20px; /* Add spacing between rows */
+    border-radius: 12px; /* Adjust the border radius for smaller screens */
+  }
+
+  .ins-course-card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+    gap: 4%; /* Add spacing between cards (4% ensures cards are aligned in rows) */
+  }
+
+  .ins-course-card .card-content {
+    padding: 12px; /* Reduce padding inside cards */
+  }
+
+  .ins-course-card .abs-badge {
+    padding: 5px 7px; /* Adjust padding for the badge */
+    font-size: 1rem; /* Slightly reduce badge font size */
+  }
+
+  .ins-course-card .price {
+    font-size: 1.6rem; /* Adjust the price font size */
+    margin-block: 6px 12px; /* Reduce margin above and below the price */
+  }
+
+  .ins-course-card .rating-text {
+    font-size: 1.3rem; /* Adjust rating text size for smaller screens */
+  }
+
+  .ins-course-card .card-meta-item {
+    font-size: 1.2rem; /* Adjust meta item text size */
+    gap: 7px; /* Slightly reduce the gap for compact display */
+  }
+
+  .ins-course-card .card-meta-item:not(:last-child)::after {
+    content: "|";
+    color: hsl(0, 0%, 70%); /* Adjust divider color for visibility */
+    padding-inline: 6px; /* Reduce divider spacing */
+  }
+
+  .ins-course-card .wrapper {
+    gap: 8px; /* Adjust spacing in wrapper */
+  }
+
+  .ins-course-card .rating-wrapper {
+    gap: 4px; /* Reduce gap for rating wrapper */
+  }
+}
+
+@media (max-width: 430px) {
+
+  body {
+    padding: 0px 4% 0px 4%;
+  }
+
+  .img-container ul {
+    font-size: 17px;
+  }
+
+  .img-container img {
+    width: 150px;
+    height: auto;
+  }
+
+  .ins-data h2 {
+    font-size: 20px;
+    margin-top: 8px;
+  }
+
+  .ins-disc h4 {
+    font-size: 16px;
+  }
+
+  .ins-disc p {
+    font-size: 12px;
+  }
+
+  .ins-courses h2 {
+    font-size: 18px;
+  }
+
+  .ins-course-card {
+    flex: 1 1 100%;
+    /* Make cards stack vertically */
+    max-width: 100%;
+    max-height: 20%;
+    /* Ensure they fit the screen */
+    border-radius: 8px;
+    /* Reduce border radius for smaller screens */
+
+  }
+
+  .ins-course-card .card-content {
+    padding: 10px;
+    /* Reduce padding for content */
+  }
+
+  .ins-course-card .abs-badge {
+    padding: 4px 6px;
+    /* Reduce badge padding */
+    font-size: 0.9rem;
+    /* Smaller font for badges */
+  }
+
+  .ins-course-card .price {
+    font-size: 1.5rem;
+    /* Slightly smaller price font */
+  }
+
+  .ins-course-card .rating-text {
+    font-size: 1.2rem;
+    /* Reduce font size for rating text */
+  }
+
+  .ins-course-card .card-meta-item {
+    font-size: 1.1rem;
+    /* Make meta text smaller */
+    gap: 5px;
+    /* Reduce gap for compact spacing */
+  }
+
+  .ins-course-card .card-meta-item:not(:last-child)::after {
+    content: "|";
+    color: hsl(0, 0%, 65%);
+    /* Adjust color for smaller screens */
+    padding-inline: 5px;
+    /* Reduce inline spacing */
+  }
+}
